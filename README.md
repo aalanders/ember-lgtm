@@ -12,7 +12,7 @@ In your component or model class, where you will add your validation, simply inc
 
 ```
 import Validatable from 'clinical/mixins/validatable';
-import LGTM from 'lgtm';  // TODO: extend ember-cli-shims to include LGTM or do something similar
+import LGTM from 'lgtm';
 
 Ember.Component.extend(Validatable, {
     validator: LGTM.validator()
