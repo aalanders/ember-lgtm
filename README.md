@@ -8,7 +8,7 @@ This ember-cli addon provides a Mixin around [Square's LGTM Validation library](
 
 ### Usage
 
-In your component or model class, where you will add your validation, simply include the Validatable Mixin and provide a validator object. See the example below: 
+In your component or model class, where you will add your validation, simply include the Validatable Mixin and provide a validator object. See the example below:
 
 ```
 import Validatable from 'clinical/mixins/validatable';
@@ -31,7 +31,7 @@ Ember.Component.extend(Validatable, {
 });
 ```
 
-Then in your template, you have access to an errors array for each validated property. 
+Then in your template, you have access to an errors array for each validated property.
 
 ```
 <label>Email:</label>
@@ -41,23 +41,23 @@ Then in your template, you have access to an errors array for each validated pro
 
 ### Behavior
 
-When the properties are in an valid state (initial), the validation won't be triggered. This leads to a better UX since the user doesn't want to see errors while he's in the middle of typing somethign that will likely turn something from invalid to valid. However, if a property is already in an invalid state, it will be re-validated when the property changes. This is also known as inline validation and is useful to provide immediate feedback when somethings goes from invalid to valid. 
+When the properties are in an valid state (initial), the validation won't be triggered. This leads to a better UX since the user doesn't want to see errors while he's in the middle of typing somethign that will likely turn something from invalid to valid. However, if a property is already in an invalid state, it will be re-validated when the property changes. This is also known as inline validation and is useful to provide immediate feedback when somethings goes from invalid to valid.
 
 ### Nested validation
 
 ember-lgtm also adds two LGTM helpers to add support for nested validations for objects and array. Here's an example of how to use them:
 
 ```
-// TODO: 
+// TODO:
 ```
 
-You can create your own [Custom Helpers](https://github.com/square/lgtm/wiki/Custom-Helpers) by using `LGTM.helpers.register` directly.  
+You can create your own [Custom Helpers](https://github.com/square/lgtm/wiki/Custom-Helpers) by using `LGTM.helpers.register` directly.
 
 ### Server side validation
 
-LGTM uses Promises and this addon configures it to use the same RSVP library that Ember uses. When doing server side validation, the `validate` function returns a Promise and each validation registered either return immediately or return a promise. LGTM will execute all the promises in parellel and wait for all the validation logic to complete before returning the validation inforamtion. 
+LGTM uses Promises and this addon configures it to use the same RSVP library that Ember uses. When doing server side validation, the `validate` function returns a Promise and each validation registered either return immediately or return a promise. LGTM will execute all the promises in parellel and wait for all the validation logic to complete before returning the validation inforamtion.
 
-### LGTM 
+### LGTM
 
 LGTM is a simple JavaScript library for validating objects and collecting error messages. It leaves the display, behavior, and error messages in your hands, focusing on letting you describe your validations cleanly and concisely for whatever environment you're using.
 
@@ -65,11 +65,11 @@ You can find more about it on the [LGTM Wiki](https://github.com/square/lgtm/wik
 
 ## Samples
 
-The samples and documentation are available at [TODO: publish dummy to divshot]. 
+The samples and documentation are available at [TODO: publish dummy to divshot].
 
 ### Running samples locallly
 
-* `git clone https://github.com/practicefusion/ember-lgtm` 
+* `git clone https://github.com/practicefusion/ember-lgtm`
 * `npm install`
 * `bower install`
 * `ember server`
@@ -80,6 +80,6 @@ The samples and documentation are available at [TODO: publish dummy to divshot].
 * `ember test`
 * `ember test --server`
 
-## More 
+## More
 
 For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
