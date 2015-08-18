@@ -1,10 +1,12 @@
 # Ember-lgtm
 
-This ember-cli addon provides a Mixin around [Square's LGTM Validation library](https://github.com/square/lgtm). The mixin follows recommended validation patterns [TODO: link to source]. This addon also adds a few LGTM helpers to add support for [nested validation](// TODO link) and registers LGTM to use Ember's [RSVP](http://emberjs.com/api/classes/RSVP.Promise.html)
+This ember-cli addon provides a Mixin around [Square's LGTM Validation library](https://github.com/square/lgtm). The mixin follows recommended validation patterns [TODO: link to source]. This addon also adds a few LGTM helpers to add support for [nested validation](#nested-validation) and registers LGTM to use Ember's [RSVP](http://emberjs.com/api/classes/RSVP.Promise.html)
 
 ## Installation in your app
 
-* `ember install ember-lgtm`
+```
+ember install ember-lgtm
+```
 
 ### Usage
 
@@ -43,7 +45,7 @@ Then in your template, you have access to an errors array for each validated pro
 
 When the properties are in an valid state (initial), the validation won't be triggered. This leads to a better UX since the user doesn't want to see errors while he's in the middle of typing somethign that will likely turn something from invalid to valid. However, if a property is already in an invalid state, it will be re-validated when the property changes. This is also known as inline validation and is useful to provide immediate feedback when somethings goes from invalid to valid.
 
-### Nested validation
+### <a name="nested-validation"></a> Nested validation
 
 ember-lgtm also adds two LGTM helpers to add support for nested validations for objects and array. Here's an example of how to use them:
 
