@@ -30,9 +30,9 @@ var reValidate = function (sender, key) {
  *         .required('You must select a state to register for electronic transmission')
  *     .build()
  * ```
- * Right now we're using LGTM, but it validator could be anything that implements the
+ * We're using LGTM, but the validator could be anything that implements the
  * [validate signature](https://github.com/square/lgtm/wiki/ObjectValidator#validator)
- * returning a Promise/A+
+ * returning a Promise
  */
 export default Ember.Mixin.create({
     init: function() {
@@ -45,7 +45,7 @@ export default Ember.Mixin.create({
         });
     },
 
-    validator: Ember.required(),
+    validator: null,
     /***
      * Validates based on the rules defined by the validator and sets the errors (if any) into a
      * `errors` hash in the current object.
