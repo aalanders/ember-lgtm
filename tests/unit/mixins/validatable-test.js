@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import ValidatableMixin from '../../../mixins/validatable';
+import ValidatableMixin from 'ember-lgtm/mixins/validatable';
 import { module, test } from 'qunit';
 
 module('Unit | Mixin | validatable');
