@@ -13,14 +13,14 @@ ember install ember-lgtm
 In your component or model class, where you will add your validation, simply include the Validatable Mixin and provide a validator object. See the example below:
 
 ```
-import Validatable from 'clinical/mixins/validatable';
 import LGTM from 'lgtm';
+import Validatable from 'ember-lgtm/mixins/validatable';
 
 Ember.Component.extend(Validatable, {
     validator: LGTM.validator()
         .validates('userEmail')     // Name of your property
-        .required('Email address is required')  // Validatior error
-        .email('Enter a valid email')   // Helper used to validate the property
+        .required('Email address is required')
+        .email('Enter a valid email')
         .build(),
     save: function () {
         this.validate().then(function (isValid) {
