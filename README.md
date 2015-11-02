@@ -1,6 +1,6 @@
 # Ember-lgtm
 
-This ember-cli addon provides a Mixin around [Square's LGTM Validation library](https://github.com/square/lgtm). The mixin follows recommended validation patterns [TODO: link to source]. This addon also adds a few LGTM helpers to add support for [nested validation](#nested-validation) and registers LGTM to use Ember's [RSVP](http://emberjs.com/api/classes/RSVP.Promise.html)
+This ember-cli addon provides a Mixin around [Square's LGTM Validation library](https://github.com/square/lgtm). The mixin follows recommended validation patterns [http://alistapart.com/article/inline-validation-in-web-forms]. This addon also adds a few LGTM helpers to add support for [nested validation](#nested-validation) and registers LGTM to use Ember's [RSVP](http://emberjs.com/api/classes/RSVP.Promise.html)
 
 ## Installation in your app
 
@@ -22,12 +22,14 @@ Ember.Component.extend(Validatable, {
         .required('Email address is required')
         .email('Enter a valid email')
         .build(),
-    save: function () {
-        this.validate().then(function (isValid) {
-            if (isValid) {
-                // perform the actual save
-            }
-        })
+    actions: {
+        save: function () {
+            this.validate().then(function (isValid) {
+                if (isValid) {
+                    // perform the actual save
+                }
+            })
+        }
     }
     // Other code...
 });
@@ -37,8 +39,9 @@ Then in your template, you have access to an errors array for each validated pro
 
 ```
 <label>Email:</label>
-<input type="email" class={{errors.email:error}}>
+{{input value=email classNames="errors.email:error"}}
 <span class="error">{{errors.email}}</span>
+<button {{action 'save'}}>Save</button>
 ```
 
 ### Behavior
@@ -47,10 +50,10 @@ When the properties are in an valid state (initial), the validation won't be tri
 
 ### <a name="nested-validation"></a> Nested validation
 
-ember-lgtm also adds two LGTM helpers to add support for nested validations for objects and array. Here's an example of how to use them:
+ember-lgtm also adds two LGTM helpers to add support for nested validations for objects and arrays. Here's an example of how to use them:
 
 ```
-// TODO:
+// TODO: add example for `isValid` and `allAreValid` helpers
 ```
 
 You can create your own [Custom Helpers](https://github.com/square/lgtm/wiki/Custom-Helpers) by using `LGTM.helpers.register` directly.
