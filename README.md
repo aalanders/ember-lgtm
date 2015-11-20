@@ -1,6 +1,6 @@
 # Ember-lgtm
 
-This ember-cli addon provides a Mixin around [Square's LGTM Validation library](https://github.com/square/lgtm). The mixin follows recommended validation patterns [http://alistapart.com/article/inline-validation-in-web-forms]. This addon also adds a few LGTM helpers to add support for [nested validation](#nested-validation) and registers LGTM to use Ember's [RSVP](http://emberjs.com/api/classes/RSVP.Promise.html)
+This ember-cli addon provides a Mixin around [Square's LGTM Validation library](https://github.com/square/lgtm). The mixin follows (recommended validation patterns)[http://alistapart.com/article/inline-validation-in-web-forms]. This addon also adds a few LGTM helpers to add support for [nested validation](#nested-validation) and registers LGTM to use Ember's [RSVP](http://emberjs.com/api/classes/RSVP.Promise.html)
 
 ## Installation in your app
 
