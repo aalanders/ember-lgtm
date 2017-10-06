@@ -2,7 +2,8 @@
 
 (function () {
   define('lgtm', [], function () {
-    LGTM.configure('defer', Ember.RSVP.defer);
+    LGTM.configure('Promise', Ember.RSVP.Promise);
+    LGTM.configure('get', Ember.get);
     return { 'default': LGTM };
   });
 })();
