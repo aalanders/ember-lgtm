@@ -48,7 +48,7 @@ Then in your template, you have access to an errors array for each validated pro
 
 ### Behavior
 
-When the properties are in an valid state (initial), the validation won't be triggered. This leads to a better UX since the user doesn't want to see errors while he's in the middle of typing somethign that will likely turn something from invalid to valid. However, if a property is already in an invalid state, it will be re-validated when the property changes. This is also known as inline validation and is useful to provide immediate feedback when somethings goes from invalid to valid.
+When the properties are in an valid state (initial), the validation won't be triggered. This leads to a better UX since the user doesn't want to see errors while he's in the middle of typing something that will likely turn something from invalid to valid. However, if a property is already in an invalid state, it will be re-validated when the property changes. This is also known as inline validation and is useful to provide immediate feedback when somethings goes from invalid to valid.
 
 ### <a name="nested-validation"></a> Nested validation
 
@@ -62,7 +62,7 @@ You can create your own [Custom Helpers](https://github.com/square/lgtm/wiki/Cus
 
 ### Server side validation
 
-LGTM uses Promises and this addon configures it to use the same RSVP library that Ember uses. When doing server side validation, the `validate` function returns a Promise and each validation registered either return immediately or return a promise. LGTM will execute all the promises in parellel and wait for all the validation logic to complete before returning the validation inforamtion.
+LGTM uses Promises and this addon configures it to use the same RSVP library that Ember uses. When doing server side validation, the `validate` function returns a Promise and each validation registered either return immediately or return a promise. LGTM will execute all the promises in parallel and wait for all the validation logic to complete before returning the validation information.
 
 ### LGTM
 
@@ -77,8 +77,7 @@ The samples and documentation are available at [TODO: publish dummy to divshot].
 ### Running samples locallly
 
 * `git clone https://github.com/practicefusion/ember-lgtm`
-* `npm install`
-* `bower install`
+* `yarn`
 * `ember server`
 * Visit your app at [http://localhost:4200](http://localhost:4200) will show the demo app.
 

@@ -1,6 +1,6 @@
-/* globals require */
 import LGTM from 'lgtm';
-import { module, test } from 'qunit';
+import require from 'require';
+import { module, test } from 'ember-qunit';
 
 module('Unit | Vendor | lgtm shim');
 

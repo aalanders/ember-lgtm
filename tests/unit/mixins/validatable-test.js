@@ -2,8 +2,7 @@ import Ember from 'ember';
 import LGTM from 'lgtm';
 import sinon from 'sinon';
 import ValidatableMixin from 'ember-lgtm/mixins/validatable';
-import QUnit from 'qunit';
-import { module, test } from 'qunit';
+import { module, test } from 'ember-qunit';
 
 module('Unit | Mixin | validatable');
 
@@ -43,9 +42,7 @@ test('Creation - throws on creation if no validator is defined', function (asser
 test('Validate - Validates based on the rules defined in the validator and sets the error (if any) into an `errors` hash', function (assert) {
   assert.expect(3);
   let subject = createValidator();
-  QUnit.stop(); // Note: we manually handles async, since LGTM's promise aren't well configured yet. Need to get `LGTM.configure('defer', Ember.RSVP.defer);` to work
   subject.validate().then(function (isValid) {
-    QUnit.start();
     assert.equal(isValid, false);
     assert.equal(subject.get('errors.requiredProperty'), 'requiredProperty is required');
     assert.equal(subject.get('errors.requiredProperty2'), 'requiredProperty2 is required');
@@ -55,9 +52,7 @@ test('Validate - Validates based on the rules defined in the validator and sets 
 test('Validate - validates the specified property', function (assert) {
   assert.expect(1);
   let subject = createValidator();
-  QUnit.stop();
   subject.validate('requiredProperty').then(()=> {
-    QUnit.start();
     assert.equal(subject.get('errors.requiredProperty'), 'requiredProperty is required');
   });
 });
@@ -65,9 +60,7 @@ test('Validate - validates the specified property', function (assert) {
 test('Validate - validating a specific property, doesn\'t clear previous errros', function (assert) {
   assert.expect(2);
   let subject = createValidator();
-  QUnit.stop();
   subject.validate().then(()=> subject.validate('requiredProperty').then(function () {
-    QUnit.start();
     assert.equal(subject.get('errors.requiredProperty'), 'requiredProperty is required');
     assert.equal(subject.get('errors.requiredProperty2'), 'requiredProperty2 is required'); // From the first (global validation)
   }));
@@ -77,9 +70,7 @@ test('Validate - changing a property with errors, triggers a re-validation of th
   assert.expect(5);
   let subject = createValidator();
   sinon.spy(subject, 'validate');
-  QUnit.stop();
   subject.validate('requiredProperty').then(()=> {
-    QUnit.start();
     assert.equal(subject.get('errors.requiredProperty'), 'requiredProperty is required');
     assert.ok(subject.validate.calledOnce);
     subject.set('requiredProperty', 'newValue');
