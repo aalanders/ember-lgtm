@@ -1,3 +1,4 @@
+/* globals visit, fillIn, click, andThen, currentURL, findWithAssert */
 import { test } from 'qunit';
 import moduleForAcceptance from '../../tests/helpers/module-for-acceptance';
 
@@ -19,7 +20,7 @@ test('clicking save before field is populated results in a validation error', fu
   visit('/');
   click('button');
   andThen(function() {
-    assert.equal(findWithAssert('.error').text(), REQUIRED_ERROR_MESSAGE);
+    assert.equal(findWithAssert('.error').text(), REQUIRED_ERROR_MESSAGE), 'Required validation error message is displayed';
   });
 });
 
@@ -28,7 +29,18 @@ test('clicking save with invalid email results in a validation error', function(
   fillIn('input', 'abc');
   click('button');
   andThen(function() {
+    assert.equal(findWithAssert('.error').text(), INVALID_ERROR_MESSAGE, 'Invalid email validation error message is shown');
+  });
+});
+
+test('modifying the property clears the validation error', function(assert) {
+  visit('/');
+  fillIn('input', 'abc');
+  click('button').then(() => {
     assert.equal(findWithAssert('.error').text(), INVALID_ERROR_MESSAGE);
+    fillIn('input', 'test@test.com').then(() => {
+      assert.equal(findWithAssert('.error').text(), '');
+    });
   });
 });
 
