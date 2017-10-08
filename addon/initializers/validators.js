@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import * as LGTM from 'lgtm';
+import LGTM from 'lgtm';
 
 // Need for LGTML to consider this invalid. We just care about the aggregate
 const DEFAULT_ALL_ARE_VALID_ERROR_MESSAGE = 'Generic Error';
