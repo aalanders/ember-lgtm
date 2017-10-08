@@ -31,14 +31,8 @@ export function initialize(/* container, application */) {
               return true; // if it's not set, we simply bypass. Add .required explicitly if needed
           }
 
-          var validations = array.map(function (property) {
-                  return property.validate();
-              });
-          return Ember.RSVP.all(validations).then(function (results) {
-              return results.every(function (result) {
-                  return result;
-              });
-          });
+          const validations = array.map(property => property.validate());
+          return Ember.RSVP.all(validations).then(results => results.every(result => result));
       }, message || DEFAULT_ALL_ARE_VALID_ERROR_MESSAGE);
   });
 
