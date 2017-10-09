@@ -20,15 +20,15 @@ import Validatable from 'ember-lgtm/mixins/validatable';
 
 Ember.Component.extend(Validatable, {
     validator: LGTM.validator()
-        .validates('userEmail')     // Name of your property
+        .validates('email')     // Name of your property
         .required('Email address is required')
         .email('Enter a valid email')
         .build(),
     actions: {
-        save: function () {
-            this.validate().then(function (isValid) {
+        save() {
+            this.validate().then(isValid => {
                 if (isValid) {
-                    // perform the actual save
+                    // Perform the actual save
                 }
             })
         }
@@ -41,9 +41,9 @@ Then in your template, you have access to an errors array for each validated pro
 
 ```
 <label>Email:</label>
-{{input value=email classNames="errors.email:error"}}
+{{input value=email class=(if errors.email "error")}}
 <span class="error">{{errors.email}}</span>
-<button {{action 'save'}}>Save</button>
+<button onclick={{action "save"}}>Save</button>
 ```
 
 ### Behavior
