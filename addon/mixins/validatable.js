@@ -1,4 +1,5 @@
-import Ember from 'ember';
+import EmberObject from '@ember/object';
+import Mixin from '@ember/object/mixin';
 
 const reValidate = function (sender, key) {
     // Revalidate if *any* property has errors
@@ -34,11 +35,11 @@ const reValidate = function (sender, key) {
  * [validate signature](https://github.com/square/lgtm/wiki/ObjectValidator#validator)
  * returning a Promise
  */
-export default Ember.Mixin.create({
+export default Mixin.create({
     init() {
         this._super();
         const propertiesToValidate = this.validator.attributes();
-        this.set('errors', Ember.Object.create());
+        this.set('errors', EmberObject.create());
         propertiesToValidate.forEach(property => {
             this.addObserver(property, this, reValidate);
         });
@@ -63,7 +64,7 @@ export default Ember.Mixin.create({
             // NOTE: we might need to this for optionalKey's dependents props with validations
             errors.set(optionalKey, undefined);
         } else {
-            errors = Ember.Object.create();
+            errors = EmberObject.create();
         }
         this.set('errors', errors);
         return this.validator.validate(this, optionalKey).then(result => {
