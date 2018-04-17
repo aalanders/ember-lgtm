@@ -1,6 +1,6 @@
 /* globals visit, fillIn, click, andThen, currentURL, findWithAssert */
 import { module, test } from 'qunit';
-import { visit, click, currentURL, find, fillIn } from '@ember/test-helpers';
+import { visit, click, currentURL, fillIn } from '@ember/test-helpers';
 import { setupApplicationTest } from 'ember-qunit';
 
 module('Acceptance | validated form sample', function(hooks) {
@@ -18,29 +18,29 @@ module('Acceptance | validated form sample', function(hooks) {
   test('clicking save before field is populated results in a validation error', async function(assert) {
     await visit('/');
     await click('button');
-    assert.equal(find('.error').innerText, REQUIRED_ERROR_MESSAGE), 'Required validation error message is displayed';
+    assert.equal(this.element.querySelector('.error').textContent, REQUIRED_ERROR_MESSAGE), 'Required validation error message is displayed';
   });
 
   test('clicking save with invalid email results in a validation error', async function(assert) {
     await visit('/');
     await fillIn('input', 'abc');
     await click('button');
-    assert.equal(find('.error').innerText, INVALID_ERROR_MESSAGE, 'Invalid email validation error message is shown');
+    assert.equal(this.element.querySelector('.error').textContent, INVALID_ERROR_MESSAGE, 'Invalid email validation error message is shown');
   });
 
   test('modifying the property clears the validation error', async function(assert) {
     await visit('/');
     await fillIn('input', 'abc');
     await click('button');
-    assert.equal(find('.error').innerText, INVALID_ERROR_MESSAGE);
+    assert.equal(this.element.querySelector('.error').textContent, INVALID_ERROR_MESSAGE);
     await fillIn('input', 'test@test.com');
-    assert.equal(find('.error').innerText, '');
+    assert.equal(this.element.querySelector('.error').textContent, '');
   });
 
   test('clicking save valid email results success message', async function(assert) {
     await visit('/');
     await fillIn('input', 'test@test.com');
     await click('button');
-    assert.equal(find('.success').innerText, SUCCESS_MESSAGE);
+    assert.equal(this.element.querySelector('.success').textContent, SUCCESS_MESSAGE);
   });
 });
