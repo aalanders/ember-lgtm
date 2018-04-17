@@ -52,10 +52,32 @@ When the properties are in an valid state (initial), the validation won't be tri
 
 ### <a name="nested-validation"></a> Nested validation
 
-ember-lgtm also adds two LGTM helpers to add support for nested validations for objects and arrays. Here's an example of how to use them:
+ember-lgtm also adds two LGTM helpers to add support for nested validations for objects and arrays.
+
+#### isValid
+Validates a validatable object. A validatable object is anything with a `validate` function returning a boolean promise (like the mixin mixin/validatable)
+
+In this example, the property `billingAddress` contains an address object that implements a `validate` function to validate the individual properties of the address. The parent object only checks the overall validity of the object, rather than each individual field.
 
 ```
-// TODO: add example for `isValid` and `allAreValid` helpers
+validator: LGTM.validator()
+    .validates('fullName')
+        .required('Full name is required')
+    .validates('billingAddress')
+        .isValid()
+    .build()
+```
+
+#### allAreValid
+Validates all validatable objects in the array are valid. A validatable object is anything with a `validate` function returning a boolean promise (like the mixin mixin/validatable).
+
+This functions like `isValid`, except that the validated property should be an array of validatable objects, which must all be valid in order for this validator function to return true.
+
+```
+validator: LGTM.validator()
+    .validates('arrayOfAddresses')
+        .allAreValid()
+    .build()
 ```
 
 You can create your own [Custom Helpers](https://github.com/square/lgtm/wiki/Custom-Helpers) by using `LGTM.helpers.register` directly.
@@ -72,9 +94,7 @@ You can find more about it on the [LGTM Wiki](https://github.com/square/lgtm/wik
 
 ## Samples
 
-The samples and documentation are available at [TODO: publish dummy to divshot].
-
-### Running samples locallly
+### Running samples locally
 
 * `git clone https://github.com/practicefusion/ember-lgtm`
 * `yarn`
