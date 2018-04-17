@@ -17,10 +17,6 @@ function createValidator (validator) {
 }
 
 module('Unit | Mixin | validatable', function() {
-
-});
-
-module('Unit | Mixin | validatable - creation tests', function() {
   test('Creation - A validator property needs to be defined with a build validator', function (assert) {
     let ValidatableObject = EmberObject.extend(ValidatableMixin);
     let subject = ValidatableObject.create({
