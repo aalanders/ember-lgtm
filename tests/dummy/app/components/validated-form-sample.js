@@ -1,8 +1,8 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 import LGTM from 'lgtm';
 import Validatable from 'ember-lgtm/mixins/validatable';
 
-export default Ember.Component.extend(Validatable, {
+export default Component.extend(Validatable, {
     resultMessage: null,
     validator: LGTM.validator()
         .validates('email')     // Name of your property

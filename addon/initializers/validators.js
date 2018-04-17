@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import { all } from 'rsvp';
 import LGTM from 'lgtm';
 
 // Need for LGTML to consider this invalid. We just care about the aggregate
@@ -32,7 +32,7 @@ export function initialize(/* container, application */) {
           }
 
           const validations = array.map(property => property.validate());
-          return Ember.RSVP.all(validations).then(results => results.every(result => result));
+          return all(validations).then(results => results.every(result => result));
       }, message || DEFAULT_ALL_ARE_VALID_ERROR_MESSAGE);
   });
 
