@@ -1,7 +1,7 @@
 <div>
-    <label>Email:</label>
-    {{input value=email class=(if errors.email "error")}}
-    <span class="error">{{errors.email}}</span>
+  <label>Email:</label>
+  {{input value=email class=(if errors.email "error")}}
+  <span class="error">{{errors.email}}</span>
 </div>
 <button onclick={{action "save"}}>Save</button>
 <p class="success">{{resultMessage}}</p>
