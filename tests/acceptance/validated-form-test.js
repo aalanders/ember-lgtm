@@ -18,23 +18,23 @@ module('Acceptance | validated form sample', function(hooks) {
   test('clicking save before field is populated results in a validation error', async function(assert) {
     await visit('/');
     await click('button');
-    assert.equal(this.element.querySelector('.error').textContent, REQUIRED_ERROR_MESSAGE), 'Required validation error message is displayed';
+    assert.equal(this.element.querySelector('span.error').textContent, REQUIRED_ERROR_MESSAGE), 'Required validation error message is displayed';
   });
 
   test('clicking save with invalid email results in a validation error', async function(assert) {
     await visit('/');
     await fillIn('input', 'abc');
     await click('button');
-    assert.equal(this.element.querySelector('.error').textContent, INVALID_ERROR_MESSAGE, 'Invalid email validation error message is shown');
+    assert.equal(this.element.querySelector('span.error').textContent, INVALID_ERROR_MESSAGE, 'Invalid email validation error message is shown');
   });
 
   test('modifying the property clears the validation error', async function(assert) {
     await visit('/');
     await fillIn('input', 'abc');
     await click('button');
-    assert.equal(this.element.querySelector('.error').textContent, INVALID_ERROR_MESSAGE);
+    assert.equal(this.element.querySelector('span.error').textContent, INVALID_ERROR_MESSAGE);
     await fillIn('input', 'test@test.com');
-    assert.equal(this.element.querySelector('.error').textContent, '');
+    assert.equal(this.element.querySelector('span.error').textContent, '');
   });
 
   test('clicking save valid email results success message', async function(assert) {
