@@ -1,6 +1,6 @@
 {
   "name": "ember-lgtm",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Ember CLI addon for Square's LGTM validation library",
   "keywords": [
     "ember-addon"
