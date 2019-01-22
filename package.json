@@ -3,7 +3,10 @@
   "version": "0.1.5",
   "description": "Ember CLI addon for Square's LGTM validation library",
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "ember-lgtm",
+    "lgtm",
+    "validation"
   ],
   "repository": "",
   "license": "MIT",
@@ -12,6 +15,7 @@
     "doc": "doc",
     "test": "tests"
   },
+  "homepage": "https://github.com/practicefusion/ember-lgtm",
   "scripts": {
     "build": "ember build",
     "lint:hbs": "ember-template-lint .",
@@ -22,6 +26,7 @@
   },
   "dependencies": {
     "ember-cli-babel": "^7.1.2",
+    "lgtm": "^1.2.0",
     "lodash": "4.17.11"
   },
   "devDependencies": {
@@ -51,7 +56,6 @@
     "ember-welcome-page": "^3.0.0",
     "eslint-plugin-ember": "^5.2.0",
     "eslint-plugin-node": "^7.0.1",
-    "lgtm": "^1.2.0",
     "loader.js": "^4.7.0",
     "qunit-dom": "^0.8.0"
   },
