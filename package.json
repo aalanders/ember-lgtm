@@ -27,7 +27,7 @@
   "dependencies": {
     "ember-cli-babel": "^7.1.2",
     "lgtm": "^1.2.0",
-    "lodash": "4.17.11"
+    "lodash": "4.17.13"
   },
   "devDependencies": {
     "@ember/optional-features": "^0.6.3",
