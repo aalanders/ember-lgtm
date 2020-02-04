@@ -25,21 +25,15 @@
     "test:all": "ember try:each"
   },
   "dependencies": {
-    "clean-css": "^4.1.11",
-    "cryptiles": "^4.1.2",
-    "deep-extend": "^0.6.0",
     "ember-cli-babel": "^7.1.2",
-    "hoek": "^4.2.1",
-    "just-extend": "^4.0.0",
-    "lgtm": "^1.2.0",
-    "lodash": "^4.17.15",
-    "lodash.template": "^4.5.0",
-    "randomatic": "^3.0.0",
-    "set-value": "^2.0.1"
+    "lgtm": "^1.2.0"
   },
   "devDependencies": {
     "@ember/optional-features": "^0.6.3",
     "broccoli-asset-rev": "^3.0.0",
+    "clean-css": "^4.1.11",
+    "cryptiles": "^4.1.2",
+    "deep-extend": "^0.6.0",
     "ember-ajax": "^3.1.0",
     "ember-cli": "~3.4.0",
     "ember-cli-dependency-checker": "^3.0.0",
@@ -64,8 +58,14 @@
     "ember-welcome-page": "^3.0.0",
     "eslint-plugin-ember": "^5.2.0",
     "eslint-plugin-node": "^7.0.1",
+    "hoek": "^4.2.1",
+    "just-extend": "^4.0.0",
     "loader.js": "^4.7.0",
-    "qunit-dom": "^0.8.0"
+    "lodash": "^4.17.15",
+    "lodash.template": "^4.5.0",
+    "qunit-dom": "^0.8.0",
+    "randomatic": "^3.0.0",
+    "set-value": "^2.0.1"
   },
   "engines": {
     "node": "6.* || 8.* || >= 10.*"
