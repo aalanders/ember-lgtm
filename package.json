@@ -27,7 +27,7 @@
   "dependencies": {
     "clean-css": "^4.1.11",
     "cryptiles": "^4.1.2",
-    "deep-extend": "^0.5.1",
+    "deep-extend": "^0.6.0",
     "ember-cli-babel": "^7.1.2",
     "hoek": "^4.2.1",
     "just-extend": "^4.0.0",
