@@ -26,8 +26,7 @@
   },
   "dependencies": {
     "ember-cli-babel": "^7.1.2",
-    "lgtm": "^1.2.0",
-    "lodash": "^4.17.15"
+    "lgtm": "^1.2.0"
   },
   "devDependencies": {
     "@ember/optional-features": "^0.6.3",
@@ -62,6 +61,7 @@
     "hoek": "^4.2.1",
     "just-extend": "^4.0.0",
     "loader.js": "^4.7.0",
+    "lodash": "^4.17.15",
     "lodash.template": "^4.5.0",
     "qunit-dom": "^0.8.0",
     "randomatic": "^3.0.0",
