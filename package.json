@@ -65,7 +65,8 @@
     "lodash.template": "^4.5.0",
     "qunit-dom": "^0.8.0",
     "randomatic": "^3.0.0",
-    "set-value": "^2.0.1"
+    "set-value": "^2.0.1",
+    "sourcemap-validator": "^1.1.1"
   },
   "engines": {
     "node": "6.* || 8.* || >= 10.*"
