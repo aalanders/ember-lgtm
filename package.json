@@ -33,7 +33,6 @@
     "broccoli-asset-rev": "^3.0.0",
     "clean-css": "^4.1.11",
     "cryptiles": "^4.1.2",
-    "deep-extend": "^0.6.0",
     "ember-ajax": "^3.1.0",
     "ember-cli": "~3.4.0",
     "ember-cli-dependency-checker": "^3.0.0",
@@ -62,7 +61,6 @@
     "just-extend": "^4.0.0",
     "loader.js": "^4.7.0",
     "lodash": "^4.17.15",
-    "lodash.template": "^4.5.0",
     "qunit-dom": "^0.8.0",
     "randomatic": "^3.0.0",
     "set-value": "^2.0.1"
@@ -72,5 +70,9 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
+  },
+  "resolutions": {
+    "deep-extend": "^0.6.0",
+    "sourcemap-validator": "^1.1.1"
   }
 }
