@@ -25,8 +25,11 @@
     "test:all": "ember try:each"
   },
   "dependencies": {
+    "acorn": "^5.7.4",
     "ember-cli-babel": "^7.1.2",
-    "lgtm": "^1.2.0"
+    "kind-of": "^6.0.3",
+    "lgtm": "^1.2.0",
+    "minimist": "^0.2.1"
   },
   "devDependencies": {
     "@ember/optional-features": "^0.6.3",
