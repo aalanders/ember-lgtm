@@ -28,8 +28,7 @@
     "acorn": "^5.7.4",
     "ember-cli-babel": "^7.1.2",
     "kind-of": "^6.0.3",
-    "lgtm": "^1.2.0",
-    "minimist": "^1.2.3"
+    "lgtm": "^1.2.0"
   },
   "devDependencies": {
     "@ember/optional-features": "^0.6.3",
@@ -76,6 +75,7 @@
   },
   "resolutions": {
     "deep-extend": "^0.6.0",
+    "minimist": "^1.2.3",
     "sourcemap-validator": "^1.1.1"
   }
 }
